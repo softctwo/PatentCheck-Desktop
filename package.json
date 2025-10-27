@@ -1,0 +1,19 @@
+{
+  "name": "patentcheck-desktop",
+  "version": "1.0.0",
+  "description": "**专利自助预审工具（桌面版）V0.9 MVP**",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.9.1"
+  }
+}

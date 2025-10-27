@@ -1,0 +1,40 @@
+# PatentCheck-Desktop Dependencies
+# Python 3.9+
+
+# GUI Framework
+PySide6>=6.6.0
+
+# Document Processing
+python-docx>=1.1.0
+PyMuPDF>=1.23.0  # PDF parsing and text extraction
+
+# Image Processing
+opencv-python-headless>=4.8.0
+Pillow>=10.0.0
+
+# OCR (for marker detection)
+pytesseract>=0.3.10
+
+# PDF Generation
+reportlab>=4.0.0
+
+# Utilities
+numpy>=1.24.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Development Tools
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# AI Integration
+python-dotenv>=1.0.0
+openai>=1.0.0
+
+# YOLO Object Detection
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.0.0  # YOLOv5/v8

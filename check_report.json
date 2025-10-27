@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-10-27T16:15:35.016491",
+  "summary": {
+    "total": 5,
+    "errors": 2,
+    "warnings": 2,
+    "infos": 0,
+    "passes": 1
+  },
+  "results": [
+    {
+      "rule_id": "R001",
+      "category": "structure",
+      "severity": "error",
+      "title": "缺少技术领域章节",
+      "description": "说明书必须包含'技术领域'章节",
+      "location": "说明书",
+      "suggestion": "请在说明书开头添加'技术领域'章节",
+      "reference": "专利法实施细则第18条",
+      "details": {}
+    },
+    {
+      "rule_id": "R002",
+      "category": "image_format",
+      "severity": "warning",
+      "title": "附图分辨率过低",
+      "description": "附图1分辨率为150dpi，低于要求的200dpi",
+      "location": "附图/图1.jpg",
+      "suggestion": "请提高图片分辨率至200dpi以上",
+      "reference": "专利审查指南第一部分第一章5.2节",
+      "details": {}
+    },
+    {
+      "rule_id": "R003",
+      "category": "image_format",
+      "severity": "error",
+      "title": "附图包含彩色像素",
+      "description": "附图2检测到34%彩色像素",
+      "location": "附图/图2.jpg",
+      "suggestion": "请转换为纯黑白线条图",
+      "reference": "专利法实施细则第17条",
+      "details": {}
+    },
+    {
+      "rule_id": "R004",
+      "category": "alignment",
+      "severity": "warning",
+      "title": "标号15未在说明书出现",
+      "description": "图中标记15，但说明书中缺少相应解释",
+      "location": "附图3 + 说明书第8页",
+      "suggestion": "请在说明书中补充标号15的说明",
+      "reference": "专利审查指南",
+      "details": {}
+    },
+    {
+      "rule_id": "R005",
+      "category": "structure",
+      "severity": "pass",
+      "title": "说明书结构完整",
+      "description": "说明书包含所有必需章节",
+      "location": "说明书",
+      "suggestion": null,
+      "reference": null,
+      "details": {}
+    }
+  ],
+  "ai_review_result": null,
+  "ai_review_prompt": null
+}

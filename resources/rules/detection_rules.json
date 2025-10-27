@@ -1,0 +1,132 @@
+{
+  "version": "1.0",
+  "description": "专利检测规则配置文件",
+  "updated": "2025-10-27",
+  
+  "structure_rules": {
+    "required_sections": [
+      "技术领域",
+      "背景技术",
+      "发明内容",
+      "附图说明",
+      "具体实施方式"
+    ],
+    "optional_sections": [
+      "有益效果",
+      "实施例",
+      "工业应用",
+      "符号说明"
+    ],
+    "section_order_strict": false,
+    "allow_custom_sections": true
+  },
+  
+  "image_rules": {
+    "resolution": {
+      "min_width": 800,
+      "min_height": 600,
+      "min_dpi": 150,
+      "recommended_dpi": 300
+    },
+    "format": {
+      "allowed_extensions": [".jpg", ".jpeg", ".png", ".tif", ".tiff"],
+      "max_file_size_mb": 10,
+      "color_mode": "grayscale_or_bw"
+    },
+    "quality": {
+      "check_color_pixels": true,
+      "max_color_pixel_ratio": 0.01,
+      "check_line_width": true,
+      "min_line_width_px": 2
+    }
+  },
+  
+  "marker_rules": {
+    "detection": {
+      "use_ocr": true,
+      "use_hough_circle": true,
+      "min_marker_number": 1,
+      "max_marker_number": 999
+    },
+    "validation": {
+      "check_continuity": true,
+      "allow_gaps": true,
+      "max_gap_size": 5,
+      "check_duplicates": true
+    },
+    "format": {
+      "allow_letters": true,
+      "letter_pattern": "[a-zA-Z]",
+      "number_pattern": "\\d+"
+    }
+  },
+  
+  "alignment_rules": {
+    "spec_to_figure": {
+      "check_missing_markers": true,
+      "check_extra_markers": true,
+      "tolerance": 2
+    },
+    "figure_to_spec": {
+      "check_unused_markers": true,
+      "warn_threshold": 3
+    }
+  },
+  
+  "abstract_rules": {
+    "figure": {
+      "required": true,
+      "must_be_figure_1": true,
+      "max_count": 1
+    },
+    "naming": {
+      "patterns": ["摘要附图", "abstract", "图1", "Fig.1", "Figure1"],
+      "case_sensitive": false
+    }
+  },
+  
+  "report_rules": {
+    "severity_levels": {
+      "error": {
+        "color": "#FF0000",
+        "icon": "🛑",
+        "weight": 10
+      },
+      "warning": {
+        "color": "#FFA500",
+        "icon": "⚠️",
+        "weight": 5
+      },
+      "info": {
+        "color": "#0000FF",
+        "icon": "ℹ️",
+        "weight": 1
+      },
+      "pass": {
+        "color": "#00FF00",
+        "icon": "✅",
+        "weight": 0
+      }
+    },
+    "output": {
+      "default_format": "pdf",
+      "include_summary": true,
+      "include_statistics": true,
+      "group_by_category": true
+    }
+  },
+  
+  "performance": {
+    "max_processing_time_seconds": 120,
+    "enable_parallel": true,
+    "max_workers": 4,
+    "cache_parsed_files": true
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "log_to_file": true,
+    "log_file_path": "logs/patentcheck.log",
+    "max_log_size_mb": 10
+  }
+}

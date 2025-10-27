@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-10-27T13:54:38.455586",
+  "summary": {
+    "total": 4,
+    "errors": 1,
+    "warnings": 2,
+    "infos": 0,
+    "passes": 1
+  },
+  "results": [
+    {
+      "rule_id": "S001",
+      "category": "structure",
+      "severity": "error",
+      "title": "缺少必需章节",
+      "description": "说明书缺少以下章节：发明内容, 附图说明",
+      "location": "/Users/zhangyanlong/Patents/实用新型专利授权说明书CN201420398070.2.pdf",
+      "suggestion": "请在说明书中添加：发明内容, 附图说明",
+      "reference": "专利法实施细则第18条",
+      "details": {
+        "missing": [
+          "发明内容",
+          "附图说明"
+        ]
+      }
+    },
+    {
+      "rule_id": "I000",
+      "category": "image_format",
+      "severity": "warning",
+      "title": "未找到附图",
+      "description": "专利申请通常需要附图",
+      "location": "文件夹",
+      "suggestion": null,
+      "reference": null,
+      "details": {}
+    },
+    {
+      "rule_id": "A001",
+      "category": "alignment",
+      "severity": "warning",
+      "title": "标号序列不连续",
+      "description": "标号从4到11，但缺少：[5, 6, 7]",
+      "location": "/Users/zhangyanlong/Patents/实用新型专利授权说明书CN201420398070.2.pdf",
+      "suggestion": "检查是否遗漏了某些标号的说明",
+      "reference": "专利审查指南",
+      "details": {}
+    },
+    {
+      "rule_id": "A002",
+      "category": "alignment",
+      "severity": "pass",
+      "title": "检测到5个标号",
+      "description": "标号范围: 4-11",
+      "location": "/Users/zhangyanlong/Patents/实用新型专利授权说明书CN201420398070.2.pdf",
+      "suggestion": null,
+      "reference": null,
+      "details": {
+        "markers": [
+          4,
+          8,
+          9,
+          10,
+          11
+        ]
+      }
+    }
+  ]
+}

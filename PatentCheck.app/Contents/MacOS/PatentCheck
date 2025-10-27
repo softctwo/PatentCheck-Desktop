@@ -1,0 +1,30 @@
+#!/bin/bash
+# 获取可执行文件的真实路径
+EXECUTABLE_PATH="$0"
+while [ -L "$EXECUTABLE_PATH" ]; do
+    EXECUTABLE_PATH=$(readlink "$EXECUTABLE_PATH")
+done
+
+# 获取项目根目录（.app的父目录）
+APP_DIR=$(cd "$(dirname "$EXECUTABLE_PATH")/../../.." && pwd)
+PROJECT_DIR="$APP_DIR"
+
+# 如果在 /Applications 中，则使用源代码路径
+if [[ "$APP_DIR" == /Applications* ]]; then
+    PROJECT_DIR="$HOME/workspaces/PatentCheck-Desktop"
+fi
+
+cd "$PROJECT_DIR" || exit 1
+
+# 启动Python应用
+python3 src/gui/main_window.py 2>&1 | tee /tmp/patentcheck.log &
+PYTHON_PID=$!
+
+# 等待窗口启动
+sleep 2
+
+# 激活窗口
+osascript -e 'tell application "System Events" to set frontmost of first process whose name contains "python3" to true' 2>/dev/null
+
+# 等待进程结束
+wait $PYTHON_PID
